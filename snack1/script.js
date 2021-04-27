@@ -3,7 +3,7 @@
 //Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 //Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 
-let Bike = [
+const Bike = [
     {
         nameBike: "Bike1",
         weigth: 10
@@ -28,6 +28,34 @@ let Bike = [
         nameBike: "Bike6",
         weigth: 13
     }
-]
+];
 
 
+const findLighter = (arrayList) => {
+    let lighterBike;
+
+
+    for (let i = 0; i < arrayList.lenght; i++) {
+        const { nameBike, weigth} = arrayList[i];
+        
+        if (!lighterBike || weigth < lighterBike.weigth) {
+            lighterBike = {
+                nameBike,
+                weigth
+            }
+        }
+    }
+    return lighterBike;
+}
+
+
+const foundLighter = findLighter(Bike);
+console.log(foundLighter);
+
+
+// function findLighter(arrayList) {
+
+//     for(let i = 0; i < arrayList.lenght; i++) {
+//         const{}
+//     }
+// }
